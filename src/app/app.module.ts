@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent }   from './about.component';
 import { HomeComponent }   from './home.component';
 import { NotFoundComponent }   from './not-found.component';
+import {MaterialModule} from '@angular/material';
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -22,7 +23,8 @@ const appRoutes: Routes =[
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MaterialModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
