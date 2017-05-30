@@ -1,9 +1,20 @@
-<h3>Главная</h3>
-<nav>
-  <button md-raised-button routerLink="">Home</button>
-  <button md-raised-button routerLink="/about">About</button>
-  <p>Имя пользователя: {{executor?.persoanalId}}</p>
-  <p>Возраст пользователя: {{executor?.hour}}</p>
-</nav>
+<li *ngFor="let tas of task"  [routerLink]="['/read', tas.id]" (click)="onSelect(tas)" [class.selected]="tas === selectedTask">
+  <p>{{tas.taskName}}</p>
+</li>
+
+<form align="center">
+  <button md-raised-button routerLink="/create">Create</button>
+</form>
+
+
+<form align="center">
+  <button md-raised-button routerLink="/read">Read</button>
+</form>
+
+<tr align="center">
+  <td id="listik" align="center">
+    <ol id="listik" align="center"></ol>
+  </td>
+</tr>
 
 

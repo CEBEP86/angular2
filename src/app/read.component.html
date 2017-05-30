@@ -1,0 +1,62 @@
+<h3>TASK</h3>
+
+{{task}}
+<tr align="center">
+  <md-input-container>
+    <input mdInput placeholder="name of this.task" value="" [(ngModel)]="taskName">
+  </md-input-container>
+
+
+  <p>
+    <md-input-container class="example-full-width">
+      <textarea mdInput placeholder="Description" [(ngModel)]="description"></textarea>
+    </md-input-container>
+  </p>
+
+
+
+  <md-input-container>
+    <input mdInput placeholder="start" value="Tue, 30 May 2017 06:31:13 GMT" [(ngModel)]="startTime">
+  </md-input-container>
+  <p>
+    <md-input-container>
+      <input mdInput placeholder="stop" value="Tue, 31 May 2017 06:31:13 GMT" [(ngModel)]="finishTime">
+    </md-input-container>
+  </p>
+
+  <form class="resp">
+    <md-select placeholder="responceble" [(ngModel)]="selectedValue" name="food">
+      <md-option *ngFor="let responceble of responcebls" [value]="responceble.value">
+        {{responceble.viewValue}}
+      </md-option>
+    </md-select>
+  </form>
+
+
+  <form class="exec" >
+    <md-select placeholder="Executors" [(ngModel)]="selectedValue2" name="food">
+      <md-option *ngFor="let executor of executors" [value]="executor.value">
+        {{executor.viewValue}}
+      </md-option>
+    </md-select>
+
+    <md-input-container>
+      <input mdInput name="hours" [(ngModel)]="this.hours" type="number">
+
+    </md-input-container>
+
+    <button md-raised-button (click)="myFunc()">add</button>
+
+  </form>
+  <li *ngFor="let exec of executor_list">
+    <p>{{exec.firstName}} {{exec.hour}} hours </p>
+  </li>
+
+  Cost: {{this.cost}}
+</tr>
+
+<nav>
+
+  <button md-raised-button routerLink="">abort</button>
+  <button md-raised-button (click)="createTask()"  >Rewrite</button>
+</nav>

@@ -1,0 +1,14 @@
+
+.example-form {
+  width: 500px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+li {
+  list-style-type: none; /* Убираем маркеры у списка */
+}
+li:before {
+  content: " "; /* Добавляем в качестве маркера символ */
+}
