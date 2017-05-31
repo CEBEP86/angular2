@@ -5,14 +5,11 @@
     <input mdInput placeholder="name of task" value="" [(ngModel)]="taskName">
   </md-input-container>
 
-
   <p>
     <md-input-container class="example-full-width">
       <textarea mdInput placeholder="Description" [(ngModel)]="description"></textarea>
     </md-input-container>
   </p>
-
-
 
   <md-input-container>
     <input mdInput placeholder="start" value="Tue, 30 May 2017 06:31:13 GMT" [(ngModel)]="startTime">
@@ -31,8 +28,7 @@
     </md-select>
   </form>
 
-
-  <form class="exec" >
+  <form class="exec">
     <md-select placeholder="Executors" [(ngModel)]="selectedValue2" name="food">
       <md-option *ngFor="let executor of executors" [value]="executor.value">
         {{executor.viewValue}}
@@ -47,7 +43,7 @@
     <button md-raised-button (click)="myFunc()">add</button>
 
   </form>
-  <li *ngFor="let exec of executor_list">
+  <li *ngFor="let exec of executorListName">
     <p>{{exec.firstName}} {{exec.hour}} hours </p>
   </li>
 
@@ -57,6 +53,6 @@
 <nav>
 
   <button md-raised-button routerLink="">abort</button>
-  <button md-raised-button (click)="createTask()" >Create</button>
+  <button md-raised-button (click)="createTask()" routerLink="">Create</button>
 </nav>
 

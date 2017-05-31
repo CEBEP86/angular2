@@ -1,15 +1,12 @@
-<li *ngFor="let tas of task"  [routerLink]="['/read', tas.id]" (click)="onSelect(tas)" [class.selected]="tas === selectedTask">
-  <p>{{tas.taskName}}</p>
+<li *ngFor="let tas of task" (click)="onSelect(tas)" [class.selected]="tas === selectedTask">
+  <a [routerLink]="['/read', tas.id]">{{tas.taskName}}</a>
+  <button md-raised-button (click)="delete(tas)">x</button>
 </li>
 
 <form align="center">
   <button md-raised-button routerLink="/create">Create</button>
 </form>
 
-
-<form align="center">
-  <button md-raised-button routerLink="/read">Read</button>
-</form>
 
 <tr align="center">
   <td id="listik" align="center">
